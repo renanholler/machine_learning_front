@@ -78,6 +78,12 @@ function App() {
           <UploadButton text="Agrupamento" onClick={openModal} />
         </div>
       </div>
+      {response && (
+        <div className="response-container">
+          <h2>Results</h2>
+          <ResultsTable data={response} />
+        </div>
+      )}
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -132,12 +138,6 @@ function App() {
           <button onClick={handleGrouping}>Enviar</button>
         </div>
       </Modal>
-      {response && (
-        <div className="response-container">
-          <h2>Results</h2>
-          <ResultsTable data={response} />
-        </div>
-      )}
     </div>
   );
 }

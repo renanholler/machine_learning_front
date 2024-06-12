@@ -148,18 +148,16 @@ const ResultsTable = ({ data }) => {
     <div>
       {data['macro avg'] && (
         <>
-          <h2>Class Results</h2>
           <RenderTable columns={classColumns} data={classData} />
           <h2>Average and Accuracy Results</h2>
           <RenderTable columns={avgColumns} data={avgData} />
         </>
       )}
       {data.clusters && (
-        <>
-          <h2>Cluster Results</h2>
+        <div className='image-container'>
           {data.elbow_plot && <img src={`data:image/png;base64,${data.elbow_plot}`} alt="2D Plot" />}
           {data.cluster_plot && <img src={`data:image/png;base64,${data.cluster_plot}`} alt="3D Plot" />}
-        </>
+        </div>
       )}
     </div>
   );

@@ -106,3 +106,18 @@ h1 {
 .modal-buttons button:hover {
   background-color: #0056b3;
 }
+
+.image-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  max-width: 600px;
+  height: auto;
+}
+
+.response-container h2 {
+  text-align: center;
+}
