@@ -54,20 +54,6 @@ const ResultsTable = ({ data }) => {
     []
   );
 
-  const clusterColumns = React.useMemo(
-    () => [
-      {
-        Header: 'Cluster',
-        accessor: 'cluster'
-      },
-      {
-        Header: 'Count',
-        accessor: 'count'
-      }
-    ],
-    []
-  );
-
   const classData = React.useMemo(() => {
     if (!data['macro avg']) return [];
     return Object.keys(data)
@@ -106,14 +92,6 @@ const ResultsTable = ({ data }) => {
         support: data['weighted avg'].support
       }
     ];
-  }, [data]);
-
-  const clusterData = React.useMemo(() => {
-    if (!data.clusters) return [];
-    return data.clusters.map((cluster, index) => ({
-      cluster: index,
-      count: cluster
-    }));
   }, [data]);
 
   const RenderTable = ({ columns, data }) => {
@@ -179,9 +157,8 @@ const ResultsTable = ({ data }) => {
       {data.clusters && (
         <>
           <h2>Cluster Results</h2>
-          <div>
-            {data.plot_3d}
-          </div>
+          {data.elbow_plot && <img src={`data:image/png;base64,${data.elbow_plot}`} alt="2D Plot" />}
+          {data.cluster_plot && <img src={`data:image/png;base64,${data.cluster_plot}`} alt="3D Plot" />}
         </>
       )}
     </div>
