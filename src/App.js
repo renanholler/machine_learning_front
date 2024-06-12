@@ -30,6 +30,11 @@ function App() {
   };
 
   const handleUpload = async (endpoint) => {
+    if (!file) {
+      alert('Favor selecionar um arquivo!');
+      return;
+    }
+
     const formData = new FormData();
     formData.append('file', file);
     formData.append('method', clusterOptions.method);
@@ -57,6 +62,10 @@ function App() {
   };
 
   const openModal = () => {
+    if (!file) {
+      alert('Favor selecionar um arquivo!');
+      return;
+    }
     setModalIsOpen(true);
   };
 
