@@ -155,8 +155,8 @@ const ResultsTable = ({ data }) => {
       )}
       {data.clusters && (
         <div className='image-container'>
-          {data.elbow_plot && <img src={`data:image/png;base64,${data.elbow_plot}`} alt="2D Plot" />}
-          {data.cluster_plot && <img src={`data:image/png;base64,${data.cluster_plot}`} alt="3D Plot" />}
+          {data.plot_2d && <img src={`data:image/png;base64,${data.plot_2d}`} alt="2D Plot" />}
+          {data.plot_3d && <img src={`data:image/png;base64,${data.plot_3d}`} alt="3D Plot" />}
         </div>
       )}
     </div>
