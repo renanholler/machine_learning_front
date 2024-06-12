@@ -153,11 +153,17 @@ const ResultsTable = ({ data }) => {
           <RenderTable columns={avgColumns} data={avgData} />
         </>
       )}
-      {data.clusters && (
-        <div className='image-container'>
-          {data.plot_2d && <img src={`data:image/png;base64,${data.plot_2d}`} alt="2D Plot" />}
-          {data.plot_3d && <img src={`data:image/png;base64,${data.plot_3d}`} alt="3D Plot" />}
-        </div>
+      {data.silhouette_score && (
+        <>
+          <div className='image-container'>
+            {data.plot_2d && <img src={`data:image/png;base64,${data.plot_2d}`} alt="2D Plot" />}
+            {data.plot_3d && <img src={`data:image/png;base64,${data.plot_3d}`} alt="3D Plot" />}
+          </div>
+          <div>
+            <h3>Número ótimo de clusters: {data.best_n_clusters}</h3>
+            <h3>Shilouette Score: {data.silhouette_score}</h3>
+          </div>
+        </>
       )}
     </div>
   );
