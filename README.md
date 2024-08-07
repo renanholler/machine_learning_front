@@ -1,5 +1,3 @@
-# pin3_front
-
 Frontend para a API de classificação e clusterização.
 
 ## Pré-requisitos
